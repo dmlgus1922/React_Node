@@ -1,5 +1,9 @@
 import './App.css';
 
+// 리덕스
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
 // 라우터
 import {Routes, Route} from 'react-router-dom';
 
@@ -11,6 +15,15 @@ import Navbar from './layout/Navbar';
 import Main from './page/Main';
 import Login from './page/Login';
 import Join from './page/Join';
+
+
+function reducer(currentState, action) {
+  if(!currentState) {
+    
+  }
+}
+
+const store = createStore(reducer);
 
 function App() {
   

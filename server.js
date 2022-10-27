@@ -10,15 +10,21 @@ const router = require('./router/router');
 const path = require('path');
 
 // 2. 외부에 있는 정보들을 요청할 때 사용하는 모듈: cors
-// 데이터를 주고받을 때 필수록 들렬ㄹ검
-
+// 데이터를 주고받을 때 필수로 등록할 것
 const cors = require('cors');
 
-// d
+
+
+// 정적인 파일을 쓸 때 이 안에 있는 애를 쓸게요
+// 주소 뒤에 운영체제에 맞게 더해주세요 __dirname(현재 내가 있는 곳)에서
+// build라는 폴더 안에 있는 static파일을 사용할게요 ()
 app.use(express.static(path.join(__dirname, 'react-project', 'build')));
 
+
+// 값을 주고 받을 때 필요함
+// 대부분 json형식으로 많이 주고 받게 됨
 app.use(cors());
 app.use(express.json());
 app.use(router);
 
-app.listen(3000);
+app.listen(3001);
